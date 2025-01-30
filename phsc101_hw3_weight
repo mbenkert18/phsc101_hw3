@@ -1,0 +1,20 @@
+def gives_weight(mass_me, mass_planet, radius):
+    """
+    Function gives your weight based on the mass and radius of the planet you're
+    currently on.
+
+    Inputs:
+        mass_me (int): your mass on earth in lbs rounded to the nearest whole 
+            number
+        mass_planet (int): the mass of the planet you're standing on
+        radius (int): the radius of the planet you're currently on
+
+    Returns (tuple)): A tuple containing weight in kilograms and pounds.
+    """
+    g = ((6.6743 * 10 ** (-11)) * mass_planet) / (radius ** 2)
+    print(f"g is: {g}")
+    relative_g = g / 9.8
+    print(f"g relative to earth is: {relative_g}")
+    weight_kg = mass_me * relative_g
+    weight_lbs = weight_kg * 2.20462
+    return (weight_kg, weight_lbs)
